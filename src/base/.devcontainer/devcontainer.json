@@ -6,18 +6,12 @@
 		"dockerfile": "./Dockerfile",
 		"context": "."
 	},
-	"remoteUser": "vscode",
+	"remoteUser": "codespace",
+	"containerUser": "codespace",
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
-			"installZsh": true,
 			"configureZshAsDefaultShell": true,
-			"installOhMyZsh": true,
-			"installOhMyZshConfig": true,
-			"upgradePackages": true,
-			"nonFreePackages": true,
-			"username": "automatic",
-			"userUid": "1001",
-			"userGid": "1001"
+			"upgradePackages": true
 		},
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
 			"moby": true,
@@ -26,10 +20,6 @@
 			"installDockerComposeSwitch": true,
 			"version": "latest",
 			"dockerDashComposeVersion": "latest"
-		},
-		"ghcr.io/devcontainers/features/github-cli:1": {},
-		"ghcr.io/devcontainers/features/go:1": {
-			"version": "1.20"
 		}
 	}
 }
