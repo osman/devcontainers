@@ -7,17 +7,11 @@ ENV ZDOTDIR=/user/vscode/.zsh
 
 RUN apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends \
-    man less bat exa tree fd-find ripgrep sd bc parallel jq tar gzip zip unzip 7zip xz-utils \
-    libreadline8 golang-chroma tzdata locales ca-certificates ssh sshpass age git \
-    htop curl wget strace stunnel dnsutils inetutils-ping inetutils-telnet tcpdump \
-    zsh neovim shellcheck, shfmt zoxide dos2unix \
-    ca-certificates-java libc-bin \
-    fzf autojump eza git-delta jq yq antidote \
-    && mkdir /user/vscode/.antidote \
-    && git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote \
-    && mv "$(readlink -en $(which fdfind))" /usr/local/bin/fd \
-    && mv "$(readlink -en $(which batcat))" /usr/local/bin/bat
+    && apt-get -y install --no-install-recommends build-essential curl git \
+    && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" \
+    && brew install fzf netcat z autojump bat fd eza git-delta chroma jq yq \
+    && brew install zsh antidote zsh-completions zsh-autosuggestions zsh-syntax-highlighting \
+    && brew install neovim
 
 ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
