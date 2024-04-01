@@ -1,0 +1,88 @@
+[safe]
+        directory = *
+        
+[credential "https://github.com/"]
+    helper =
+	helper = !gh auth git-credential
+[credential "https://gist.github.com/"]
+    helper =
+	helper = !gh auth git-credential
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+
+[delta]
+    side-by-side = false
+    navigate = true
+    line-numbers = true
+    features = navigate decorations
+    map-styles = bold purple => syntax magenta, bold cyan => syntax blue
+[diff]
+    algorithm = patience
+    wordRegex = [A-z0-9_]+|[^[:space:]]]]]|[,./]
+    colorMoved = default
+[fetch]
+    prune = true
+
+[alias]
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    pq = "!f() { gh pr create -B ${1:-main}; }; f"
+    pqd = "!f() { gh pr create --draft -B ${1:-main}; }; f"
+    br = branch -v
+    brd = "!git br | grep '\\[gone\\]' | awk '{print $1}' | xargs git br -D"
+    sq = "!f() { git rebase --interactive --autosquash $(git merge-base HEAD ${1:-main}); }; f"
+    mb = merge --log --no-edit -s ours
+    showbr = log --pretty=oneline trunk..
+    showallbr = log -U trunk ..
+    chmod = update-index --chmod=+x
+    tag-pr = pull --tags
+    tag-pu = push --tags
+
+    # Change the HEAD commit message to the template and edit
+    amd = !git commit --amend -eF `git config commit.template`
+
+    # Safe remove all branches reachable from HEAD.  Good way to GC old branches after dcommit/rebase
+    gcbr = !git branch --no-abbrev -v --no-color | sed 's/[ *]*//' | cut -d' ' -f1 | xargs -n1 git branch -d &> /dev/null
+
+[svn]
+    followparent = true
+
+[push]
+    default = tracking
+
+# Show a log of '56 minutes ago' rather than 'November 12, 2008 12:34:53'
+[log]
+    date = relative
+
+# Use only for black background terminal
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    plain = white
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red blink
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[merge]
+    tool = opendiff
+    conflictstyle = diff3
+[core]
+    pager = delta
+    autocrlf = false
+    safecrlf = warn
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+[gui]
+[pack]
+    threads=4
+[advice]
+    skippedCherryPicks = false
