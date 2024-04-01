@@ -30,4 +30,6 @@ RUN zsh -c 'source "$(brew --prefix)/share/antidote/antidote.zsh" && antidote bu
     && nvim --headless "+Lazy! sync" +qa \
     && chmod 700 .ssh \
     && chmod 644 .ssh/config \
+    && source "${NVM_DIR}/nvm.sh" \
+    && nvm use 20 \
     && pnpm install -g czg
