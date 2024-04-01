@@ -1,6 +1,7 @@
 FROM mcr.microsoft.com/devcontainers/universal:linux
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV PATH=/home/linuxbrew/.linuxbrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
 
 RUN apt-get update \
     && apt-get -y install --no-install-recommends build-essential curl git \
