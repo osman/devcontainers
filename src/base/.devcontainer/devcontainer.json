@@ -27,13 +27,6 @@
 			"version": "latest",
 			"dockerDashComposeVersion": "latest"
 		},
-		"ghcr.io/devcontainers-contrib/features/age:1": {},
-		"ghcr.io/itsmechlark/features/1password:1": {},
-		"ghcr.io/devcontainers-contrib/features/github-cli:1": {},
-		"ghcr.io/devcontainers-contrib/features/fd:1": {},
-		"ghcr.io/devcontainers-contrib/features/fzf:1": {},
-		"ghcr.io/devcontainers-contrib/features/shfmt:1": {},
-		"ghcr.io/eliises/devcontainer-features/devcontainers-cli:1": {},
-		"ghcr.io/devcontainers-contrib/features/neovim-homebrew:1": {}
+		"ghcr.io/devcontainers/features/github-cli:1": {}
 	}
 }
