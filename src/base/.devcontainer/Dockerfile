@@ -1,9 +1,6 @@
 FROM mcr.microsoft.com/devcontainers/universal:linux
 
-ENV ZDOTDIR=/user/codespace/.zsh
 ENV DEBIAN_FRONTEND=noninteractive
-ENV PNPM_HOME=/home/codespace/.pnpm
-ENV PATH=/home/linuxbrew/.linuxbrew/bin:/home/codespace/.nvm/versions/node/v${NODE_VERSION}/bin:/home/codespace/.yarn/bin:${PNPM_HOME}:$PATH
 
 RUN apt-get update \
     && apt-get -y install --no-install-recommends build-essential curl git \
@@ -12,15 +9,19 @@ RUN apt-get update \
     && brew install zsh antidote zsh-completions zsh-autosuggestions zsh-syntax-highlighting \
     && brew install neovim pnpm
 
+
+COPY --chown=codespace:codespace /rootfs /
+
+USER codespace
+
 ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 ENV LC_CTYPE=en_US.UTF-8
 ENV HOMEBREW_NO_AUTO_UPDATE=1
-
-COPY --chown=codespace:codespace /rootfs /
-
-USER codespace
+ENV ZDOTDIR=/user/codespace/.zsh
+ENV PNPM_HOME=/home/codespace/.pnpm
+ENV PATH=/home/linuxbrew/.linuxbrew/bin:/home/codespace/.nvm/versions/node/current/bin:${PNPM_HOME}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
 
 RUN nvm use 18 \
     && pnpm install -g czg \
