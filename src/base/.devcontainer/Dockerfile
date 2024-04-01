@@ -14,8 +14,8 @@ RUN apt-get update \
     && zsh -c 'source "$(brew --prefix)/share/antidote/antidote.zsh" && antidote bundle <.zsh/plugins.txt >.zsh/plugins.zsh' \
     && rm .zsh/plugins.txt \
     && pnpm install -g czg \
-    && chmod 700 /home/gitpod/.ssh \
-    && chmod 644 /home/gitpod/.ssh/config
+    && chmod 700 /home/vscode/.ssh \
+    && chmod 644 /home/vscode/.ssh/config
 
 ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
