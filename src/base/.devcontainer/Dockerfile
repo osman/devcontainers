@@ -14,20 +14,20 @@ RUN apt-get update \
 COPY --chown=codespace:codespace /rootfs /
 
 USER codespace
+WORKDIR /home/codespace
 
 ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 ENV LC_CTYPE=en_US.UTF-8
 ENV HOMEBREW_NO_AUTO_UPDATE=1
-ENV ZDOTDIR=/user/codespace/.zsh
-ENV PNPM_HOME=/home/codespace/.pnpm
+ENV ZDOTDIR=/home/codespace/.config/zsh
+ENV PNPM_HOME=/home/codespace/.config/pnpm
 ENV PATH=/home/linuxbrew/.linuxbrew/bin:/home/codespace/.nvm/versions/node/current/bin:${PNPM_HOME}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
 
-RUN nvm use 18 \
-    && pnpm install -g czg \
-    && zsh -c 'source "$(brew --prefix)/share/antidote/antidote.zsh" && antidote bundle <.zsh/plugins.txt >.zsh/plugins.zsh' \
-    && rm .zsh/plugins.txt \
+RUN zsh -c 'source "$(brew --prefix)/share/antidote/antidote.zsh" && antidote bundle <"${ZDOTDIR}/plugins.txt" >"${ZDOTDIR}/plugins.zsh"' \
+    && rm "${ZDOTDIR}/plugins.txt" \
     && nvim --headless "+Lazy! sync" +qa \
-    && chmod 700 /home/codespace/.ssh \
-    && chmod 644 /home/codespace/.ssh/config
+    && chmod 700 .ssh \
+    && chmod 644 .ssh/config \
+    && pnpm install -g czg
