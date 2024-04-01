@@ -5,6 +5,7 @@ ENV PNPM_HOME=/home/codespace/.pnpm
 ENV PATH=/home/linuxbrew/.linuxbrew/bin:/home/codespace/.nvm/versions/node/v${NODE_VERSION}/bin:/home/codespace/.yarn/bin:${PNPM_HOME}:$PATH
 
 RUN apt-get update \
+    && nvm use 18 \
     && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends build-essential curl git \
     && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" \
