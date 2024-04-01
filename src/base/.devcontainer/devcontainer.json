@@ -1,0 +1,39 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/debian
+{
+    "name": "Base",
+	"build": {
+		"dockerfile": "./Dockerfile",
+		"context": "."
+	},
+	"remoteUser": "vscode",
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"configureZshAsDefaultShell": true,
+			"installOhMyZsh": true,
+			"installOhMyZshConfig": true,
+			"upgradePackages": true,
+			"nonFreePackages": true,
+			"username": "automatic",
+			"userUid": "1001",
+			"userGid": "1001"
+		},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"moby": true,
+			"azureDnsAutoDetection": true,
+			"installDockerBuildx": true,
+			"installDockerComposeSwitch": true,
+			"version": "latest",
+			"dockerDashComposeVersion": "latest"
+		},
+		"ghcr.io/devcontainers-contrib/features/age:1": {},
+		"ghcr.io/itsmechlark/features/1password:1": {},
+		"ghcr.io/devcontainers-contrib/features/github-cli:1": {},
+		"ghcr.io/devcontainers-contrib/features/fd:1": {},
+		"ghcr.io/devcontainers-contrib/features/fzf:1": {},
+		"ghcr.io/devcontainers-contrib/features/shfmt:1": {},
+		"ghcr.io/eliises/devcontainer-features/devcontainers-cli:1": {},
+		"ghcr.io/devcontainers-contrib/features/neovim-homebrew:1": {}
+	}
+}
