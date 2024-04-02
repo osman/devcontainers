@@ -22,9 +22,4 @@ ENV ZDOTDIR=/home/vscode/.config/zsh
 ENV PNPM_HOME=/home/vscode/.config/pnpm
 ENV PATH=/home/linuxbrew/.linuxbrew/bin:${PNPM_HOME}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
 
-RUN zsh -c 'source "$(brew --prefix)/share/antidote/antidote.zsh" && antidote bundle <"${ZDOTDIR}/plugins.txt" >"${ZDOTDIR}/plugins.zsh"' \
-    && rm "${ZDOTDIR}/plugins.txt" \
-    && bash -c 'nvim --headless "+Lazy! sync" +qa' \
-    && chmod 700 .ssh \
-    && chmod 644 .ssh/config \
-    && bash -c 'source "${NVM_DIR}/nvm.sh" && nvm use 20 && pnpm install -g czg'
+RUN chmod 700 .ssh && chmod 644 .ssh/config
