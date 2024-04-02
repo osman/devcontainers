@@ -1,4 +1,4 @@
-export ZDOTDIR="${HOME}/.zsh"
+export ZDOTDIR="${HOME}/.config/zsh"
 
 source "${ZDOTDIR}/env.zsh"
 source "${ZDOTDIR}/styling.zsh"

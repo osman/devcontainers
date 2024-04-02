@@ -26,7 +26,7 @@ export PAGER='less'
 export MANPAGER='bat --wrap=never'
 
 # zsh settings
-source "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
+source "${ZDOTDIR}/antidote/antidote.zsh"
 export ZSH="$(antidote path robbyrussell/oh-my-zsh)"
 export ZSH_CUSTOM="${ZSH}/custom"
 export ZSH_COLORIZE_TOOL=chroma
