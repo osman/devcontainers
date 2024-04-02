@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/zsh
 set -e
 
 source "$(brew --prefix)/share/antidote/antidote.zsh"
