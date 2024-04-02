@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/debian:bookworm
+FROM mcr.microsoft.com/devcontainers/base:bookworm
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PATH=/home/linuxbrew/.linuxbrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
