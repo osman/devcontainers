@@ -6,7 +6,7 @@ ENV PATH=/home/linuxbrew/.linuxbrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin
 RUN apt-get update \
     && apt-get -y install --no-install-recommends build-essential \
     && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" \
-    && brew install fzf netcat z autojump bat fd eza git-delta chroma jq yq antidote neovim pnpm
+    && brew install fzf netcat z autojump bat fd eza git-delta chroma jq yq neovim
 
 COPY --chown=vscode:vscode /rootfs /
 
