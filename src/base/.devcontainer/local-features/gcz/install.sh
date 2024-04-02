@@ -4,12 +4,9 @@ set -e
 su - vscode <<EOF
 set -e
 
-PATH=${PATH}
+export PATH="${PNPM_HOME}:${PATH}"
 source "${NVM_DIR}/nvm.sh"
 nvm use 18
 
-mkdir -p "${PNPM_HOME}"
-PNPM_HOME=${PNPM_HOME}
-pnpm setup
-pnpm install -g czg
+PNPM_HOME=${PNPM_HOME} pnpm install -g czg
 EOF
