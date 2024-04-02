@@ -2,7 +2,7 @@
 set -e
 
 su - vscode <<EOF
-set -e
+set -ex
 
 PATH=${PATH}
 source "${NVM_DIR}/nvm.sh"
