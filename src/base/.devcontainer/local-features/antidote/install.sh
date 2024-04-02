@@ -7,7 +7,7 @@ set -e
 export PATH=${PATH}
 export ZDOTDIR=${ZDOTDIR}
 
-ln -s "${ZDOTDIR}/.zshrc" "${HOME}/.zshrc"
+ln -s "${ZDOTDIR}/.zshrc" "/home/vscode/.zshrc"
 
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR}/antidote
 source "${ZDOTDIR}/antidote/antidote.zsh"
