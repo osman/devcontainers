@@ -1,29 +1,29 @@
-robbyrussell/oh-my-zsh
-robbyrussell/oh-my-zsh path:plugins/1password
-robbyrussell/oh-my-zsh path:plugins/autojump
-robbyrussell/oh-my-zsh path:plugins/aws
-robbyrussell/oh-my-zsh path:plugins/brew
-robbyrussell/oh-my-zsh path:plugins/colored-man-pages
-robbyrussell/oh-my-zsh path:plugins/colorize
-robbyrussell/oh-my-zsh path:plugins/common-aliases
-robbyrussell/oh-my-zsh path:plugins/docker
-robbyrussell/oh-my-zsh path:plugins/docker-compose
-robbyrussell/oh-my-zsh path:plugins/fzf
-robbyrussell/oh-my-zsh path:plugins/gem
-robbyrussell/oh-my-zsh path:plugins/gh
-robbyrussell/oh-my-zsh path:plugins/git
-robbyrussell/oh-my-zsh path:plugins/gitfast
-robbyrussell/oh-my-zsh path:plugins/kubectl
-robbyrussell/oh-my-zsh path:plugins/macos
-robbyrussell/oh-my-zsh path:plugins/man
-robbyrussell/oh-my-zsh path:plugins/mvn
-robbyrussell/oh-my-zsh path:plugins/nvm
-robbyrussell/oh-my-zsh path:plugins/pip
-robbyrussell/oh-my-zsh path:plugins/rake
-robbyrussell/oh-my-zsh path:plugins/rbenv
-robbyrussell/oh-my-zsh path:plugins/ruby
-robbyrussell/oh-my-zsh path:plugins/yarn
-robbyrussell/oh-my-zsh path:plugins/z
+ohmyzsh/oh-my-zsh
+ohmyzsh/oh-my-zsh path:plugins/1password
+ohmyzsh/oh-my-zsh path:plugins/autojump
+ohmyzsh/oh-my-zsh path:plugins/aws
+ohmyzsh/oh-my-zsh path:plugins/brew
+ohmyzsh/oh-my-zsh path:plugins/colored-man-pages
+ohmyzsh/oh-my-zsh path:plugins/colorize
+ohmyzsh/oh-my-zsh path:plugins/common-aliases
+ohmyzsh/oh-my-zsh path:plugins/docker
+ohmyzsh/oh-my-zsh path:plugins/docker-compose
+ohmyzsh/oh-my-zsh path:plugins/fzf
+ohmyzsh/oh-my-zsh path:plugins/gem
+ohmyzsh/oh-my-zsh path:plugins/gh
+ohmyzsh/oh-my-zsh path:plugins/git
+ohmyzsh/oh-my-zsh path:plugins/gitfast
+ohmyzsh/oh-my-zsh path:plugins/kubectl
+ohmyzsh/oh-my-zsh path:plugins/macos
+ohmyzsh/oh-my-zsh path:plugins/man
+ohmyzsh/oh-my-zsh path:plugins/mvn
+ohmyzsh/oh-my-zsh path:plugins/nvm
+ohmyzsh/oh-my-zsh path:plugins/pip
+ohmyzsh/oh-my-zsh path:plugins/rake
+ohmyzsh/oh-my-zsh path:plugins/rbenv
+ohmyzsh/oh-my-zsh path:plugins/ruby
+ohmyzsh/oh-my-zsh path:plugins/yarn
+ohmyzsh/oh-my-zsh path:plugins/z
 
 Aloxaf/fzf-tab
 djui/alias-tips

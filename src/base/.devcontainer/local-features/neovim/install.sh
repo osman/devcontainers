@@ -1,4 +1,6 @@
 #! /bin/bash
 set -e
 
-nvim --headless "+Lazy! sync" +qa
+su - vscode <<'EOF'
+nvim --headless "+Lazy! sync" +qa"
+EOF

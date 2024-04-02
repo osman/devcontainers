@@ -14,8 +14,8 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath' # 
 zstyle ':fzf-tab:*' switch-group ',' '.'                                      # switch group using `,` and `.`
 
 # Load static completions
-source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$(antidote path zsh-users/zsh-autosuggestions)/zsh-autosuggestions.zsh"
+source "$(antidote path zsh-users/zsh-syntax-highlighting)/zsh-syntax-highlighting.zsh"
 source "$(antidote path zsh-users/zsh-history-substring-search)/zsh-history-substring-search.zsh"
 
 # keybindings
