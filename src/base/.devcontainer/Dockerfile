@@ -1,26 +1,25 @@
-FROM mcr.microsoft.com/devcontainers/universal:linux
+FROM mcr.microsoft.com/devcontainers/debian:bookworm
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PATH=/home/linuxbrew/.linuxbrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
 
 RUN apt-get update \
-    && apt-get -y install --no-install-recommends build-essential curl git \
+    && apt-get -y install --no-install-recommends build-essential \
     && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" \
-    && brew install fzf netcat z autojump bat fd eza git-delta chroma jq yq \
-    && brew install zsh antidote neovim pnpm
+    && brew install fzf netcat z autojump bat fd eza git-delta chroma jq yq antidote neovim pnpm
 
-COPY --chown=codespace:codespace /rootfs /
+COPY --chown=vscode:vscode /rootfs /
 
-USER codespace
-WORKDIR /home/codespace
+USER vscode
+WORKDIR /home/vscode
 
 ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 ENV LC_CTYPE=en_US.UTF-8
 ENV HOMEBREW_NO_AUTO_UPDATE=1
-ENV ZDOTDIR=/home/codespace/.config/zsh
-ENV PNPM_HOME=/home/codespace/.config/pnpm
+ENV ZDOTDIR=/home/vscode/.config/zsh
+ENV PNPM_HOME=/home/vscode/.config/pnpm
 ENV PATH=/home/linuxbrew/.linuxbrew/bin:${PNPM_HOME}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
 
 RUN zsh -c 'source "$(brew --prefix)/share/antidote/antidote.zsh" && antidote bundle <"${ZDOTDIR}/plugins.txt" >"${ZDOTDIR}/plugins.zsh"' \

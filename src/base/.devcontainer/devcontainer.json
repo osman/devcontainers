@@ -6,10 +6,12 @@
 		"dockerfile": "./Dockerfile",
 		"context": "."
 	},
-	"remoteUser": "codespace",
-	"containerUser": "codespace",
+	"remoteUser": "vscode",
+	"containerUser": "vscode",
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"installOhMyZsh": false,
 			"configureZshAsDefaultShell": true,
 			"upgradePackages": true
 		},
