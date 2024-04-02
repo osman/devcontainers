@@ -7,9 +7,7 @@ RUN apt-get update \
     && apt-get -y install --no-install-recommends build-essential curl git \
     && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" \
     && brew install fzf netcat z autojump bat fd eza git-delta chroma jq yq \
-    && brew install zsh antidote zsh-completions zsh-autosuggestions zsh-syntax-highlighting \
-    && brew install neovim pnpm
-
+    && brew install zsh antidote neovim pnpm
 
 COPY --chown=codespace:codespace /rootfs /
 
