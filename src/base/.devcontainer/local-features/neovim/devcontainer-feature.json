@@ -1,5 +1,8 @@
 {
   "id": "neovim",
   "name": "Neovim Plugins",
-  "version": "latest"
+  "version": "latest",
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils:2"
+  ]
 }

@@ -1,5 +1,8 @@
 {
   "id": "gcz",
   "name": "Git Commitizen",
-  "version": "latest"
+  "version": "latest",
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/node:1"
+  ]
 }

@@ -1,5 +1,8 @@
 {
   "id": "antidote",
   "name": "Antidote (zsh plugins)",
-  "version": "latest"
+  "version": "latest",
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils:2"
+  ]
 }
